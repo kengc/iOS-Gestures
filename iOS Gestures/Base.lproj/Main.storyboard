@@ -23,11 +23,31 @@
                         <segue destination="6ss-qk-Abu" kind="relationship" relationship="viewControllers" id="JHA-OF-qSV"/>
                         <segue destination="wSy-H1-jJS" kind="relationship" relationship="viewControllers" id="3ig-CI-8Ti"/>
                         <segue destination="TLz-4U-FS0" kind="relationship" relationship="viewControllers" id="cT3-UC-J7H"/>
+                        <segue destination="Y2n-oz-W5m" kind="relationship" relationship="viewControllers" id="K4P-Vr-OIs"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEE-Ym-vu8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-557" y="-206"/>
+        </scene>
+        <!--Rotate-->
+        <scene sceneID="K5C-1e-PtW">
+            <objects>
+                <viewController id="Y2n-oz-W5m" customClass="RotateViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PaX-Rj-d7q"/>
+                        <viewControllerLayoutGuide type="bottom" id="x7e-KV-xjS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M9X-zW-20N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Rotate" image="item5" id="JyA-7V-SYP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vdm-4M-Pd9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-537" y="-911"/>
         </scene>
         <!--Pan-->
         <scene sceneID="P52-fe-zIP">
@@ -128,5 +148,6 @@
         <image name="item2" width="30" height="28"/>
         <image name="item3" width="30" height="28"/>
         <image name="item4" width="30" height="30"/>
+        <image name="item5" width="30" height="30"/>
     </resources>
 </document>
