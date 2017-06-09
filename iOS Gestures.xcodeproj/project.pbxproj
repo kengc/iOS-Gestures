@@ -16,6 +16,7 @@
 		739C6BFA1EEA170200E8EE05 /* PanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739C6BF91EEA170200E8EE05 /* PanViewController.m */; };
 		739C6BFD1EEA172600E8EE05 /* TapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739C6BFC1EEA172600E8EE05 /* TapViewController.m */; };
 		739C6C001EEA1E9200E8EE05 /* PinchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739C6BFF1EEA1E9200E8EE05 /* PinchViewController.m */; };
+		739C6C031EEA2E4400E8EE05 /* SwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739C6C021EEA2E4400E8EE05 /* SwipeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		739C6BFC1EEA172600E8EE05 /* TapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapViewController.m; sourceTree = "<group>"; };
 		739C6BFE1EEA1E9200E8EE05 /* PinchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinchViewController.h; sourceTree = "<group>"; };
 		739C6BFF1EEA1E9200E8EE05 /* PinchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinchViewController.m; sourceTree = "<group>"; };
+		739C6C011EEA2E4400E8EE05 /* SwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeViewController.h; sourceTree = "<group>"; };
+		739C6C021EEA2E4400E8EE05 /* SwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,8 @@
 				739C6BDB1EEA118800E8EE05 /* Main.storyboard */,
 				739C6BFE1EEA1E9200E8EE05 /* PinchViewController.h */,
 				739C6BFF1EEA1E9200E8EE05 /* PinchViewController.m */,
+				739C6C011EEA2E4400E8EE05 /* SwipeViewController.h */,
+				739C6C021EEA2E4400E8EE05 /* SwipeViewController.m */,
 				739C6BF81EEA170200E8EE05 /* PanViewController.h */,
 				739C6BF91EEA170200E8EE05 /* PanViewController.m */,
 				739C6BFB1EEA172600E8EE05 /* TapViewController.h */,
@@ -170,6 +175,7 @@
 				739C6BE01EEA118800E8EE05 /* iOS_Gestures.xcdatamodeld in Sources */,
 				739C6BD71EEA118800E8EE05 /* AppDelegate.m in Sources */,
 				739C6BD41EEA118800E8EE05 /* main.m in Sources */,
+				739C6C031EEA2E4400E8EE05 /* SwipeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
