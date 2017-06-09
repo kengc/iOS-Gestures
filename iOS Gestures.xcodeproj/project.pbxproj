@@ -13,6 +13,8 @@
 		739C6BE01EEA118800E8EE05 /* iOS_Gestures.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 739C6BDE1EEA118800E8EE05 /* iOS_Gestures.xcdatamodeld */; };
 		739C6BE21EEA118800E8EE05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 739C6BE11EEA118800E8EE05 /* Assets.xcassets */; };
 		739C6BE51EEA118800E8EE05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 739C6BE31EEA118800E8EE05 /* LaunchScreen.storyboard */; };
+		739C6BFA1EEA170200E8EE05 /* PanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739C6BF91EEA170200E8EE05 /* PanViewController.m */; };
+		739C6BFD1EEA172600E8EE05 /* TapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739C6BFC1EEA172600E8EE05 /* TapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,10 @@
 		739C6BE11EEA118800E8EE05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		739C6BE41EEA118800E8EE05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		739C6BE61EEA118800E8EE05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		739C6BF81EEA170200E8EE05 /* PanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanViewController.h; sourceTree = "<group>"; };
+		739C6BF91EEA170200E8EE05 /* PanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanViewController.m; sourceTree = "<group>"; };
+		739C6BFB1EEA172600E8EE05 /* TapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapViewController.h; sourceTree = "<group>"; };
+		739C6BFC1EEA172600E8EE05 /* TapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,10 @@
 				739C6BD51EEA118800E8EE05 /* AppDelegate.h */,
 				739C6BD61EEA118800E8EE05 /* AppDelegate.m */,
 				739C6BDB1EEA118800E8EE05 /* Main.storyboard */,
+				739C6BF81EEA170200E8EE05 /* PanViewController.h */,
+				739C6BF91EEA170200E8EE05 /* PanViewController.m */,
+				739C6BFB1EEA172600E8EE05 /* TapViewController.h */,
+				739C6BFC1EEA172600E8EE05 /* TapViewController.m */,
 				739C6BD21EEA118800E8EE05 /* Supporting Files */,
 			);
 			path = "iOS Gestures";
@@ -149,6 +159,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				739C6BFA1EEA170200E8EE05 /* PanViewController.m in Sources */,
+				739C6BFD1EEA172600E8EE05 /* TapViewController.m in Sources */,
 				739C6BE01EEA118800E8EE05 /* iOS_Gestures.xcdatamodeld in Sources */,
 				739C6BD71EEA118800E8EE05 /* AppDelegate.m in Sources */,
 				739C6BD41EEA118800E8EE05 /* main.m in Sources */,

@@ -30,7 +30,7 @@
         <!--Pan-->
         <scene sceneID="P52-fe-zIP">
             <objects>
-                <viewController id="Ny3-aT-hW8" sceneMemberID="viewController">
+                <viewController id="Ny3-aT-hW8" customClass="PanViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XCb-wv-f35"/>
                         <viewControllerLayoutGuide type="bottom" id="nKV-GF-lUc"/>
@@ -38,18 +38,34 @@
                     <view key="view" contentMode="scaleToFill" id="lWu-eB-Eux">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5PQ-ga-nfU">
+                                <rect key="frame" x="67" y="216" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.22501167450000001" blue="0.1430435488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="rvu-pc-YKC" appends="YES" id="ZVQ-Fq-wtY"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pan" image="item1" id="DpE-zz-LZ1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gsg-8i-u1p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="rvu-pc-YKC">
+                    <connections>
+                        <action selector="redViewPanned:" destination="Ny3-aT-hW8" id="30L-HN-mbT"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="377" y="-489"/>
         </scene>
         <!--Tap-->
         <scene sceneID="mGM-Bo-fMm">
             <objects>
-                <viewController id="6ss-qk-Abu" sceneMemberID="viewController">
+                <viewController id="6ss-qk-Abu" customClass="TapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3xW-P3-ZQA"/>
                         <viewControllerLayoutGuide type="bottom" id="RdH-68-lGk"/>
@@ -64,6 +80,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="053-bK-es3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="377" y="170"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gfk-e0-xPR">
+            <objects>
+                <viewController id="Wzz-2n-5SG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wgN-oP-xOZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="kbG-pm-yws"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="its-Pk-0ae">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jcn-ne-kts" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
