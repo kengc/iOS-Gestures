@@ -12,6 +12,10 @@
 
 @property (nonatomic) BOOL open;
 
+@property (nonatomic) UIView *brownView;
+
+@property (nonatomic) UIView *whiteView;
+
 @end
 
 @implementation SwipeViewController
@@ -24,108 +28,105 @@
      [super viewDidLoad];
 
 
-UIView *brownView = [[UIView alloc] initWithFrame:CGRectZero];
-brownView.translatesAutoresizingMaskIntoConstraints = NO;
-brownView.backgroundColor = [UIColor brownColor];
+    self.brownView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.brownView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.brownView.backgroundColor = [UIColor brownColor];
+    self.brownView.clipsToBounds = YES;
  
 //have to use bounds instead of contraints becaus constraints will prevent swiping
 //trying to create a brown bar that is centered
 //and is 5 pixels from left and right
 
     //get brown rec containers height and  / 2
-CGFloat halfheight = self.view.frame.size.height / 2;
-CGFloat brownRectTopLeftY = halfheight - 20;
+    CGFloat halfheight = self.view.frame.size.height / 2;
+    CGFloat brownRectTopLeftY = halfheight - 20;
 //CGFloat brownRectBottomLeftPosition = halfheight + 20;
     
-CGFloat width = self.view.frame.size.width - 10;
+    CGFloat width = self.view.frame.size.width - 10;
     
  //5 is the buffer "leading edge" padding
-brownView.frame = CGRectMake(5, brownRectTopLeftY, width, 40);
-[self.view addSubview:brownView];
+    self.brownView.frame = CGRectMake(5, brownRectTopLeftY, width, 40);
+    [self.view addSubview:self.brownView];
     
+    
+////// White rectangle bounds method /////////
+    
+//2) add white rectange and anchor to brown rect
 
-UIView *whiteView = [[UIView alloc] initWithFrame:CGRectZero];
-whiteView.translatesAutoresizingMaskIntoConstraints = NO;
-whiteView.backgroundColor = [UIColor whiteColor];
+    self.whiteView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.whiteView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.whiteView.backgroundColor = [UIColor whiteColor];
+
 
     //get brown rec containers height and  / 2
-CGFloat selfHalfheight = self.view.frame.size.height / 2;
-CGFloat whiteRectTopLeftY = selfHalfheight - 20;
+    CGFloat selfHalfheight = self.brownView.frame.size.height;
+    //CGFloat whiteRectTopLeftY = selfHalfheight - 20;
     //CGFloat brownRectBottomLeftPosition = halfheight + 20;
     
-CGFloat selfViewWidth = self.view.frame.size.width - 10;
+    CGFloat selfViewWidth = self.brownView.frame.size.width;
     
     //5 is the buffer "leading edge" padding
-whiteView.frame = CGRectMake(5, whiteRectTopLeftY, selfViewWidth, 40);
-[self.view addSubview:whiteView];
-    
-    
-
-//NSLayoutConstraint *rect1ViewHeightConstraint = [NSLayoutConstraint constraintWithItem:rect1View
-//                                                                              attribute:NSLayoutAttributeHeight
-//                                                                              relatedBy:NSLayoutRelationEqual
-//                                                                                 toItem:nil
-//                                                                              attribute:NSLayoutAttributeHeight
-//                                                                             multiplier:1.0
-//                                                                               constant:50.0];
-//
-//
-////
-//NSLayoutConstraint *rect1ViewYConstraint = [NSLayoutConstraint constraintWithItem:rect1View
-//                                                                                attribute:NSLayoutAttributeCenterY
-//                                                                                relatedBy:NSLayoutRelationEqual
-//                                                                                   toItem:self.view
-//                                                                                attribute:NSLayoutAttributeCenterY
-//                                                                               multiplier:1.0
-//                                                                                 constant:0.0];
-//
-//    
-//NSLayoutConstraint *rect1ViewLeftConstraint = [NSLayoutConstraint constraintWithItem:rect1View
-//                                                                            attribute:NSLayoutAttributeLeading
-//                                                                            relatedBy:NSLayoutRelationEqual
-//                                                                               toItem:self.view
-//                                                                            attribute:NSLayoutAttributeLeading
-//                                                                           multiplier:1.0
-//                                                                             constant:10.0];
-//
-//NSLayoutConstraint *rect1ViewRightConstraint = [NSLayoutConstraint constraintWithItem:rect1View
-//                                                                              attribute:NSLayoutAttributeTrailing
-//                                                                              relatedBy:NSLayoutRelationEqual
-//                                                                                 toItem:self.view
-//                                                                              attribute:NSLayoutAttributeTrailing
-//                                                                             multiplier:1.0
-//                                                                               constant:-10.0];
-//    
-//
-//    
-//     rect1ViewYConstraint.active = YES;
-//rect1ViewHeightConstraint.active = YES;
-//  rect1ViewLeftConstraint.active = YES;
-// rect1ViewRightConstraint.active = YES;
-
-    
-    
-    //2) add white rectange and anchor to brown rect
-    
-
-    
-    
-    
+    self.whiteView.frame = CGRectMake(0, 0, selfViewWidth, selfHalfheight);
+    [self.brownView addSubview:self.whiteView];
     
     
     
     
     //3) add two gestures for white rect and both use the same selector method
-//    UISwipeGestureRecognizer *PinchGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(viewTap:)];
+    //Swip gesture #1
+    UISwipeGestureRecognizer *swipe1Gesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(viewSwipe:)];
+    swipe1Gesture.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.whiteView addGestureRecognizer:swipe1Gesture];
     
-//    [squareView addGestureRecognizer:PinchGesture];
     
-    //4) check parameter for direction
-    //switch statment on center.direction check for left/right direction
-    //
+   //Swip gesture #2
+    UISwipeGestureRecognizer *swipe2Gesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(viewSwipe:)];
+     swipe2Gesture.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.whiteView addGestureRecognizer:swipe2Gesture];
+    
+
     
 }
 
+-(void)viewSwipe:(UISwipeGestureRecognizer *)sender{
+    
+    //4) check parameter for direction
+    //switch statment on center.direction check for left/right direction
+       NSLog(@"pre switch");
+    switch (sender.direction) {
+        case UISwipeGestureRecognizerDirectionRight:{
+            //determine how far i have moved
+            CGPoint brownRelativeRight = [sender locationInView:self.brownView];
+            NSLog(@"RIght swipe %@",  NSStringFromCGPoint(brownRelativeRight));
+            
+            CGFloat currentValue = self.whiteView.frame.origin.x;
+            
+            CGRect newFramePosition = CGRectMake(currentValue + 60, self.whiteView.frame.origin.y, self.whiteView.frame.size.width, self.whiteView.frame.size.height);
+            
+            self.whiteView.frame = newFramePosition;
+            
+            
+        }
+            break;
+            
+        case UISwipeGestureRecognizerDirectionLeft:{
+            CGPoint brownRelativeLeft = [sender locationInView:self.brownView];
+            NSLog(@"Left swipe %@",  NSStringFromCGPoint(brownRelativeLeft));
+            
+            //current  value of white box and subtract 30
+            CGFloat currentValue = self.whiteView.frame.origin.x;
+            
+            CGRect newFramePosition = CGRectMake(currentValue - 60, self.whiteView.frame.origin.y, self.whiteView.frame.size.width, self.whiteView.frame.size.height);
+            
+            self.whiteView.frame = newFramePosition;
+            
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
 
 
 
